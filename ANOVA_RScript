@@ -1,0 +1,16 @@
+
+# ANOA test on 2 Groups
+
+Group1<- c(1,2,3,4,5,6,7,8,9)
+Group2<- c(22,34,45,56,67,78,89,12, 88)
+
+A.df<- data.frame(Value = Group1, Group = "A")
+B.df<- data.frame(Value = Group2, Group = "B")
+
+AB<- data.frame(ValueA= A.df$Value, ValueB = B.df$Value)
+
+combined_group<- rbind(A.df, B.df)
+
+ANOVA_Results <- aov(Value ~ Group, data = combined_group)
+
+summary(ANOVA_Results)
